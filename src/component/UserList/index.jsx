@@ -21,7 +21,7 @@ const UserList = (props) => {
 
   const handleDeleteUser = (taiKhoan) => {
     swal({
-      title: "Are you sure?",
+      title: t("Are you sure?"),
       text: t("Do you want to delete this username ") + taiKhoan,
       icon: "warning",
       buttons: true,
