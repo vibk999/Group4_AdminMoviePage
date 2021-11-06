@@ -5,7 +5,7 @@ import {
   Typography,
   NativeSelect,
 } from "@material-ui/core";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import * as yup from "yup";
@@ -33,6 +33,7 @@ const ShowTime = (props) => {
   useEffect(() => {
     dispatch(fetchTheaterSystemInfor);
     dispatch(autoFetchTheater);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const theaterInfor = useSelector((state) => {

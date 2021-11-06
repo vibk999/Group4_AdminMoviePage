@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { fetchMovieDetail } from "../../../store/actions/MovieManagement/movieGet";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch, useHistory } from "react-router-dom";
@@ -16,6 +16,8 @@ import * as dayjs from "dayjs";
 import { details } from "./detail";
 import { buttons } from "../../../component/buttons";
 import { useTranslation } from "react-i18next";
+import swal from 'sweetalert';
+
 const Detail = (props) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -24,14 +26,23 @@ const Detail = (props) => {
   const history = useHistory();
 
   const handleDeleteMovie = (maPhim) => {
-    if (window.confirm(t("Do you want to delete this movie?"))) {
-      deleteMovie(maPhim);
-      history.push("/movieManagement");
-    }
+    swal({
+      title: t("Are you sure?"),
+      text: t("Do you want to delete this movie?"),
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        deleteMovie(maPhim);
+        history.push("/movieManagement");
+      } else {
+        swal(t("Your file is safe!"));
+      }
+    });
   };
-  // const handleSelectedMovie = (movieName) => {
-  //   dispatch(createAction(actionType.SET_SELECTED_MOVIE, movieName));
-  // };
+  
   const movieDetail = useSelector((state) => {
     return state.movies.movieDetail;
   });

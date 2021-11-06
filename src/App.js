@@ -11,7 +11,7 @@ import AddMovie from "./view/Movie Management/Add Movies/index";
 import EditMovie from "./view/Movie Management/Edit Movies/index";
 import ShowTime from "./view/Movie Management/ShowTime";
 import MyProfile from "./view/My Profile";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch,useHistory, Route } from "react-router-dom";
 import { fetchAdmin } from "./store/actions/auth";
 import { AuthRoute, PrivateRoute } from "./HOCs/Route";
 import { ThemeProvider } from "@material-ui/core";
@@ -22,8 +22,10 @@ import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import EditMyProfile from "./view/My Profile/Edit My Profile";
 
 const App = () => {
+const history=useHistory();
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
+   
       if (token) {
         dispatch(fetchAdmin);
       } 
@@ -32,7 +34,9 @@ const App = () => {
   const admin = useSelector((state) => {
     return state.admin.myProfile || {};
   });
-
+  if(admin===undefined){
+    history.push("/")
+  }
   const { maLoaiNguoiDung } = admin;
   console.log(maLoaiNguoiDung);
   //check token

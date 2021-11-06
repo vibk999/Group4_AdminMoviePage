@@ -9,6 +9,7 @@ export const fetchMovieList = (dispatch) => {
   })
     .then((res) => {
       dispatch(createAction(actionType.SET_MOVIELIST, res.data.content.items));
+      
     })
     .catch((err) => {
       console.log(err);

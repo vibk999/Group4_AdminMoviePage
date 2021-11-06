@@ -10,6 +10,8 @@ import { actionType } from "../../store/actions/type";
 import { styles } from "./styles";
 import { buttons } from "../buttons";
 import { useTranslation } from "react-i18next";
+import swal from 'sweetalert';
+
 const UserList = (props) => {
   const { t } = useTranslation();
 
@@ -18,10 +20,21 @@ const UserList = (props) => {
   const history = useHistory();
 
   const handleDeleteUser = (taiKhoan) => {
-    if (window.confirm(t("Do you want to delete this username ") + taiKhoan)) {
-      deleteUser(taiKhoan);
-      history.push("/userManagement");
-    }
+    swal({
+      title: "Are you sure?",
+      text: t("Do you want to delete this username ") + taiKhoan,
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        deleteUser(taiKhoan);
+        history.push("/userManagement");
+      } else {
+        swal(t("Your file is safe!"));
+      }
+    });
   };
   const handleSelectedUser = (
     taiKhoan,

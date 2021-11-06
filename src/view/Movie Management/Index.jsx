@@ -27,6 +27,7 @@ const MovieManagement = () => {
   const {t}=useTranslation()
   useEffect(() => {
     dispatch(fetchMovieList);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const dispatch = useDispatch();

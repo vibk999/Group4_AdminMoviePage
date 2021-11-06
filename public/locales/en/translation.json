@@ -52,9 +52,12 @@
     "Theater Cluster":"Theater Cluster",
     "Date and time":"Date and time",
     "Ticket price":"Ticket price",
+    "Ticket code":"Ticket code",
     "You can't change username!": "You can't change username!",
     "Find user fullname...": "Find user fullname...",
     "Do you want to delete this username ": "Do you want to delete this username ",
     "Do you want to delete this movie?": "Do you want to delete this movie?",
-    "Find movie names…": "Find movie names…"
+    "Find movie names…": "Find movie names…",
+    "Your file is safe!":"Your file is safe!",
+    "Are you sure?":"Are you sure?"
 }

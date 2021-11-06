@@ -1,8 +1,8 @@
 import { actionType } from "../actions/type";
 
 const initialState={
-  myProfile:null,
-  myProfileDetail:null,
+  myProfile:[],
+  myProfileDetail:[],
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {

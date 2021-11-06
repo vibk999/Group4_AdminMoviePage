@@ -1,6 +1,7 @@
 
 import { request } from "../../../api/request";
 import i18next from "i18next";
+import swal from 'sweetalert';
 
 export const deleteMovie = async (maPhim) => {
   try {
@@ -10,10 +11,11 @@ export const deleteMovie = async (maPhim) => {
     });
     const result = i18next.t("delete sucessfully");
     console.log({...res},res.data);
-    alert(result);
+    swal(result);
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    alert( err.response.data.content)
+    swal( err.response.data.content)
+ 
   }
 };
 export const addMovie = async (movie,callback) => {
@@ -25,11 +27,11 @@ export const addMovie = async (movie,callback) => {
     });
     const result = i18next.t("add sucessfully");
     console.log(res.data);
-    alert(result);
+    swal(result);
     callback();
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    alert( err.response.data.content)
+    swal( err.response.data.content)
   }
 };
 export const editMovie = async (movie,callback) => {
@@ -41,10 +43,10 @@ export const editMovie = async (movie,callback) => {
     });
     const result = i18next.t("edit sucessfully");
     console.log(res.data);
-    alert(result)
+    swal(result)
     callback();
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    alert( err.response.data.content)
+    swal( err.response.data.content)
   }
 };

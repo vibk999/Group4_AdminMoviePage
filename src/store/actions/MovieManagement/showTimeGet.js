@@ -2,6 +2,8 @@ import { createAction } from "..";
 import { request } from "../../../api/request";
 import { actionType } from "../type";
 import i18next from "i18next";
+import swal from 'sweetalert';
+
 export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
@@ -47,10 +49,10 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
       });
       const result = i18next.t("add sucessfully");
       console.log(res.data);
-      alert(result);
+      swal(result);
       callback();
     } catch (err) {
       console.log({ ...err }, err.response.data);
-      alert( err.response.data.content)
+      swal( err.response.data.content)
     }
   };
