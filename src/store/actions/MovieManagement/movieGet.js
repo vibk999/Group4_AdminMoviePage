@@ -5,7 +5,7 @@ import { actionType } from "../type";
 export const fetchMovieList = (dispatch) => {
   request({
     method: "GET",
-    url: "https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=1&soPhanTuTrenTrang=10",
+    url: "http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=1&soPhanTuTrenTrang=20",
   })
     .then((res) => {
       dispatch(createAction(actionType.SET_MOVIELIST, res.data.content.items));
@@ -19,7 +19,7 @@ export const fetchMovieEachPage = (number) => async (dispatch) => {
   try {
     const res = await request({
       method: "GET",
-      url: `https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=${number}&soPhanTuTrenTrang=10`,
+      url: `http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachPhimPhanTrang?maNhom=GP01&soTrang=${number}&soPhanTuTrenTrang=10`,
     });
 
     dispatch(createAction(actionType.SET_MOVIELIST, res.data.content.items));
@@ -31,7 +31,7 @@ export const searchMovie = (movieName) => async (dispatch) => {
   try {
     const res = await request({
       method: "GET",
-      url: `https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01&tenPhim=${movieName}`,
+      url: `http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01&tenPhim=${movieName}`,
     });
 
     dispatch(createAction(actionType.SET_MOVIELIST, res.data.content));
@@ -43,7 +43,7 @@ export const fetchMovieDetail = (id) => {
   return (dispatch)=>{
     request({
     method: "GET",
-    url: "https://movienew.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim",
+    url: "http://movieapi.cyberlearn.vn/api/QuanLyPhim/LayThongTinPhim",
     params:{
       MaPhim:id,
     },

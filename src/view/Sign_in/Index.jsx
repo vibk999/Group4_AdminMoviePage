@@ -46,8 +46,8 @@ const SignIn = (props) => {
     setTouched,
   } = useFormik({
     initialValues: {
-      taiKhoan: "VinhAdmin",
-      matKhau: "zero9999",
+      taiKhoan: "adminanhkhoa2",
+      matKhau: "123123",
     },
     validationSchema: schema,
     validateOnMount: true,

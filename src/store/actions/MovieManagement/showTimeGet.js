@@ -8,7 +8,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "GET",
-        url: "https://movienew.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap",
+        url: "http://movieapi.cyberlearn.vn/api/QuanLyRap/LayThongTinHeThongRap",
       });
 
       dispatch(createAction(actionType.SET_THEATER_SYSTEM_INFOR, res.data.content));
@@ -20,7 +20,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "GET",
-        url: `https://movienew.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${theaterCode}`,
+        url: `http://movieapi.cyberlearn.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${theaterCode}`,
       });
 
       dispatch(createAction(actionType.SET_THEATER_BY_SYSTEM, res.data.content));
@@ -32,7 +32,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "GET",
-        url: "https://movienew.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=BHDStar",
+        url: "http://movieapi.cyberlearn.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=BHDStar",
       });
 
       dispatch(createAction(actionType.SET_THEATER_BY_SYSTEM, res.data.content));
@@ -44,7 +44,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "POST",
-        url: "https://movienew.cybersoft.edu.vn/api/QuanLyDatVe/TaoLichChieu",
+        url: "http://movieapi.cyberlearn.vn/api/QuanLyDatVe/TaoLichChieu",
         data:showtime
       });
       const result = i18next.t("add sucessfully");

@@ -81,7 +81,6 @@ const MyProfile = () => {
         >
           {t("Email")} : {email}
         </Typography>
-       
 
         <Typography
           className={classes.text}
@@ -93,17 +92,17 @@ const MyProfile = () => {
           {t("User Type")} : {maLoaiNguoiDung}
         </Typography>
         {thongTinDatVe
-          ? thongTinDatVe.map((item,index) => {
+          ? thongTinDatVe.map((item, index) => {
               return (
-                <Typography key={index}
+                <Typography
+                  key={index}
                   className={classes.text}
                   gutterBottom
                   component="h5"
                   variant="h5"
                   style={{ textAlign: "center" }}
                 >
-                  {t("Ticket code")} {index+1} :
-                  {item.maVe}
+                  {t("Ticket code")} {index + 1} :{item.maVe}
                 </Typography>
               );
             })

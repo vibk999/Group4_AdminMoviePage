@@ -7,7 +7,7 @@ import swal from 'sweetalert';
 export const signIn = (userLogin, callback) => {
   return (dispatch) => {
     request({
-      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+      url: "http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/DangNhap",
       method: "POST",
       data: userLogin,
     })
@@ -32,7 +32,7 @@ export const fetchAdmin = async (dispatch) => {
   try {
     const res = await request({
       method: "POST",
-      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan",
+      url: "http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan",
     });
     dispatch(createAction(actionType.SET_ADMIN, res.data.content));
   } catch (err) {
@@ -43,7 +43,7 @@ export const fetchAdminDetail=(taiKhoan) => async (dispatch) => {
   try {
     const res = await request({
       method: "POST",
-      url: `https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${taiKhoan}`,
+      url: `http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${taiKhoan}`,
     });
     dispatch(createAction(actionType.SET_ADMIN_PROFILE, res.data.content));
   } catch (err) {

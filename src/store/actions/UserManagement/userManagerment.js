@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 export const deleteUser = async (user) => {
   try {
     const res = await request({
-      url: `https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`,
+      url: `http://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`,
       method: "DELETE",
     });
     console.log({ ...res }, res.data);
@@ -21,7 +21,7 @@ export const addUser = async (user, callback) => {
   try {
     const res = await request({
       method: "POST",
-      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
+      url: "http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/ThemNguoiDung",
       data: user,
     });
     console.log(res.data);
@@ -38,7 +38,7 @@ export const editUser = async (user, callback) => {
   try {
     const res = await request({
       method: "POST",
-      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
+      url: "http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
       data: user,
     });
     console.log(res.data);
