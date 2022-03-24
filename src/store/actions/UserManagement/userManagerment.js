@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 export const deleteUser = async (user) => {
   try {
     const res = await request({
-      url: `http://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`,
+      url: `http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`,
       method: "DELETE",
     });
     console.log({ ...res }, res.data);

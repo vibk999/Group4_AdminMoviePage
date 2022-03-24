@@ -32,7 +32,7 @@ export const fetchAdmin = async (dispatch) => {
   try {
     const res = await request({
       method: "POST",
-      url: "http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan",
+      url: "http://movieapi.cyberlearn.vn/QuanLyNguoiDung/ThongTinTaiKhoan",
     });
     dispatch(createAction(actionType.SET_ADMIN, res.data.content));
   } catch (err) {
@@ -43,7 +43,7 @@ export const fetchAdminDetail=(taiKhoan) => async (dispatch) => {
   try {
     const res = await request({
       method: "POST",
-      url: `http://movieapi.cyberlearn.vn/api/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${taiKhoan}`,
+      url: `http://movieapi.cyberlearn.vn/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${taiKhoan}`,
     });
     dispatch(createAction(actionType.SET_ADMIN_PROFILE, res.data.content));
   } catch (err) {
