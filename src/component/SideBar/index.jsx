@@ -17,7 +17,7 @@ import { MainListItems } from "../ListItem/index";
 import { useTranslation } from "react-i18next";
 import { useStyles } from "./style";
 import { useSelector,useDispatch } from "react-redux";
-import { fetchAdminDetail } from "../../store/actions/auth";
+// import { fetchAdminDetail } from "../../store/actions/auth";
 import clsx from "clsx";
 
 const SideBar = (props) => {
@@ -25,9 +25,9 @@ const SideBar = (props) => {
   const admin = useSelector((state) => {
     return state.admin.myProfile || {};
   });
-  useEffect(() => {
-    dispatch(fetchAdminDetail(admin.taiKhoan));
-  }, [dispatch,admin.taiKhoan]);
+  // useEffect(() => {
+  //   dispatch(fetchAdminDetail(admin.taiKhoan));
+  // }, [dispatch,admin.taiKhoan]);
   const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {

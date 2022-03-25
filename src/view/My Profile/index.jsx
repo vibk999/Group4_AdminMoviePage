@@ -9,7 +9,7 @@ import { styles } from "./styles";
 const MyProfile = () => {
   const { t } = useTranslation();
   const admin = useSelector((state) => {
-    return state.admin.myProfileDetail || [];
+    return state.admin.myProfile || [];
   });
 
   const {

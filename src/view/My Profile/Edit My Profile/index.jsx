@@ -32,7 +32,7 @@ const EditMyProfile = () => {
   });
 
   const admin = useSelector((state) => {
-    return state.admin.myProfileDetail || {};
+    return state.admin.myProfile || {};
   });
   const { taiKhoan, matKhau, email, soDT, hoTen, maLoaiNguoiDung } = admin;
   const {

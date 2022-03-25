@@ -8,7 +8,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "GET",
-        url: "http://movieapi.cyberlearn.vn/api/QuanLyRap/LayThongTinHeThongRap",
+        url: "https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap",
       });
 
       dispatch(createAction(actionType.SET_THEATER_SYSTEM_INFOR, res.data.content));
@@ -20,10 +20,10 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "GET",
-        url: `http://movieapi.cyberlearn.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${theaterCode}`,
+        url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${theaterCode}`,
       });
 
-      dispatch(createAction(actionType.SET_THEATER_BY_SYSTEM, res.data.content));
+      dispatch(createAction(actionType.SET_THEATER_BY_SYSTEM, res.data));
     } catch (err) {
       console.log(err);
     }
@@ -32,10 +32,10 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "GET",
-        url: "http://movieapi.cyberlearn.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=BHDStar",
+        url: "https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=BHDStar",
       });
 
-      dispatch(createAction(actionType.SET_THEATER_BY_SYSTEM, res.data.content));
+      dispatch(createAction(actionType.SET_THEATER_BY_SYSTEM, res.data));
     } catch (err) {
       console.log(err);
     }
@@ -44,7 +44,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
     try {
       const res = await request({
         method: "POST",
-        url: "http://movieapi.cyberlearn.vn/api/QuanLyDatVe/TaoLichChieu",
+        url: "https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/TaoLichChieu",
         data:showtime
       });
       const result = i18next.t("add sucessfully");
@@ -53,6 +53,6 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
       callback();
     } catch (err) {
       console.log({ ...err }, err.response.data);
-      swal( err.response.data.content)
+      swal( err.response.data)
     }
   };

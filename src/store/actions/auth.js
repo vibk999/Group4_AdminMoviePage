@@ -39,14 +39,14 @@ export const fetchAdmin = async (dispatch) => {
     console.log(err);
   }
 };
-export const fetchAdminDetail=(taiKhoan) => async (dispatch) => {
-  try {
-    const res = await request({
-      method: "POST",
-      url: `http://movieapi.cyberlearn.vn/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${taiKhoan}`,
-    });
-    dispatch(createAction(actionType.SET_ADMIN_PROFILE, res.data.content));
-  } catch (err) {
-    console.log(err);
-  }
-};
+// export const fetchAdminDetail=(taiKhoan) => async (dispatch) => {
+//   try {
+//     const res = await request({
+//       method: "POST",
+//       url: `http://movieapi.cyberlearn.vn/QuanLyNguoiDung/LayThongTinNguoiDung?taiKhoan=${taiKhoan}`,
+//     });
+//     dispatch(createAction(actionType.SET_ADMIN_PROFILE, res.data.content));
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
