@@ -49,7 +49,7 @@ export const fetchMovieDetail = (id) => {
     },
   })
     .then((res) => {
-      dispatch( createAction(actionType.SET_MOVIE_DETAIL,res.data.lichChieu))
+      dispatch( createAction(actionType.SET_MOVIE_DETAIL,res.data))
       
     })
     .catch((err) => {

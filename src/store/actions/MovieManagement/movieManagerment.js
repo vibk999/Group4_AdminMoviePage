@@ -14,7 +14,7 @@ export const deleteMovie = async (maPhim) => {
     swal(result);
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    swal( err.response.data.content)
+    swal( err.response.data)
  
   }
 };
@@ -31,7 +31,7 @@ export const addMovie = async (movie,callback) => {
     callback();
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    swal( err.response.data.content)
+    swal( err.response.data)
   }
 };
 export const editMovie = async (movie,callback) => {
@@ -47,6 +47,6 @@ export const editMovie = async (movie,callback) => {
     callback();
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    swal( err.response.data.content)
+    swal( err.response.data)
   }
 };

@@ -13,7 +13,7 @@ export const deleteUser = async (user) => {
     swal(result);
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    swal(err.response.data.content);
+    swal(err.response.data);
     return false;
   }
 };
@@ -30,7 +30,7 @@ export const addUser = async (user, callback) => {
     callback();
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    swal(err.response.data.content);
+    swal(err.response.data);
     return false;
   }
 };
@@ -47,7 +47,7 @@ export const editUser = async (user, callback) => {
     callback();
   } catch (err) {
     console.log({ ...err }, err.response.data);
-    swal(err.response.data.content);
+    swal(err.response.data);
     return false;
   }
 };
