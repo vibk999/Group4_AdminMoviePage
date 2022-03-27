@@ -37,7 +37,7 @@ export const addUser = async (user, callback) => {
 export const editUser = async (user, callback) => {
   try {
     const res = await request({
-      method: "POST",
+      method: "PUT",
       url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
       data: user,
     });

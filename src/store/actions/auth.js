@@ -32,7 +32,7 @@ export const fetchAdmin = async (dispatch) => {
   try {
     const res = await request({
       method: "POST",
-      url: "https://movieapi.cyberlearn.vn/QuanLyNguoiDung/ThongTinTaiKhoan",
+      url: "https://movie0706.cybersoft.edu.vn/QuanLyNguoiDung/ThongTinTaiKhoan",
     });
     dispatch(createAction(actionType.SET_ADMIN, res.data));
   } catch (err) {

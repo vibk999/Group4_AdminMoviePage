@@ -26,6 +26,7 @@ const ShowTime = (props) => {
   const { t} = useTranslation();
   const schema = yup.object().shape({
     maRap: yup.string().required(t("This is  required!")),
+    // maRap:yup.number().required(t("This is  required!")),
     ngayChieuGioChieu: yup.mixed().required(t("This is  required!")),
     giaVe: yup.number().max(150000,t("cant higher than ")+150000).min(75000,t("cant lower than ")+75000).required(t("This is  required!")),
   });
@@ -61,7 +62,8 @@ const ShowTime = (props) => {
   } = useFormik({
     initialValues: {
       maPhim: props.match.params.id,
-      maRap: theaterClusterInfor.maCumRap,
+      maRap: parseInt(theaterClusterInfor.maCumRap),
+      // maRap:0,
       ngayChieuGioChieu: null,
       giaVe: 0,
     },
@@ -147,6 +149,7 @@ const ShowTime = (props) => {
               </NativeSelect>
               {touched.maRap && <p className="text-danger">{errors.maRap}</p>}
             </div>
+            
             <div style={{ marginBottom: 10 }}>
               <Typography className={classes.text} variant="h5">
                 {t("Date and time")}:

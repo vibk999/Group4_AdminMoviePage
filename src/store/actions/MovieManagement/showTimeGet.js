@@ -11,7 +11,7 @@ export const fetchTheaterSystemInfor = async(dispatch) => {
         url: "https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinHeThongRap",
       });
 
-      dispatch(createAction(actionType.SET_THEATER_SYSTEM_INFOR, res.data.content));
+      dispatch(createAction(actionType.SET_THEATER_SYSTEM_INFOR, res.data));
     } catch (err) {
       console.log(err);
     }
