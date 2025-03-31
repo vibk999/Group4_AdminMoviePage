@@ -2,12 +2,12 @@ import { request } from "../../api/request";
 import i18next from "i18next";
 import { createAction } from "./index";
 import { actionType } from "./type";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 export const signIn = (userLogin, callback) => {
   return (dispatch) => {
     request({
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
       method: "POST",
       data: userLogin,
     })
@@ -18,7 +18,7 @@ export const signIn = (userLogin, callback) => {
         } else {
           dispatch(createAction(actionType.SET_ADMIN, res.data));
           localStorage.setItem("adminToken", res.data.accessToken);
-          localStorage.setItem("specialToken","can access")
+          localStorage.setItem("specialToken", "can access");
           callback();
         }
       })
@@ -32,7 +32,7 @@ export const fetchAdmin = async (dispatch) => {
   try {
     const res = await request({
       method: "POST",
-      url: "https://movie0706.cybersoft.edu.vn/QuanLyNguoiDung/ThongTinTaiKhoan",
+      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThongTinTaiKhoan",
     });
     dispatch(createAction(actionType.SET_ADMIN, res.data));
   } catch (err) {

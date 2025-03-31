@@ -1,11 +1,11 @@
 import i18next from "i18next";
 import { request } from "../../../api/request";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 export const deleteUser = async (user) => {
   try {
     const res = await request({
-      url: `https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`,
+      url: `https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${user}`,
       method: "DELETE",
     });
     console.log({ ...res }, res.data);
@@ -21,7 +21,7 @@ export const addUser = async (user, callback) => {
   try {
     const res = await request({
       method: "POST",
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
+      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
       data: user,
     });
     console.log(res.data);
@@ -38,7 +38,7 @@ export const editUser = async (user, callback) => {
   try {
     const res = await request({
       method: "PUT",
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
+      url: "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
       data: user,
     });
     console.log(res.data);
@@ -51,4 +51,3 @@ export const editUser = async (user, callback) => {
     return false;
   }
 };
-
